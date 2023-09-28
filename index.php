@@ -10,7 +10,7 @@ while($row = mysqli_fetch_assoc($sqlQuery)){
 <div id="payment" class="block">
 	<table cellspacing="1" border="1" cellpadding="4" width="600">
 		<tr>
-			<td colspan="6">
+			<td colspan="7">
 				<a href="/create.php">Создать запись</a>
 			</td>
 		</tr>
@@ -21,6 +21,7 @@ while($row = mysqli_fetch_assoc($sqlQuery)){
 			<th>Газ</th>
 			<th>Вода</th>
 			<th>Инет</th>
+			<th>Итого</th>
 		</tr>
 
 		<?php foreach ($payment as $pay): ?>
@@ -31,6 +32,7 @@ while($row = mysqli_fetch_assoc($sqlQuery)){
 			<td><?=$pay['gaz']?></td>
 			<td><?=$pay['water']?></td>
 			<td><?=$pay['inet']?></td>
+			<td><?=$pay['svet']+$pay['gaz']+$pay['water']+$pay['inet']?></td>
 		</tr>
 		<?php endforeach; ?>
 	</table>
